@@ -24,8 +24,8 @@ description: >- # this means to ignore newlines until "baseurl:"
   All of the most interesting Data Science posts and projects!
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: @Peacefrog96
-github_username:  @hanleye29
+twitter_username: Peacefrog96
+github_username:  hanleye29
 
 # Build settings
 theme: minima
