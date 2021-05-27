@@ -28,7 +28,7 @@ twitter_username: Peacefrog96
 github_username:  hanleye29
 
 # Build settings
-theme: minimal-mistakes-jekyll
+theme: jekyll-theme-modernist
 #plugins:
 #  - jekyll-feed
 
