@@ -1,12 +1,11 @@
 ---
 layout: post
-title:  "First Post!"
+title:  "Site Under Construction"
 date:   2021-05-26 19:05:20 -0500
 comments: true
 categories: Blog Data
 excerpt_separator: <!--more-->
 ---
 
-Here's my first Blog Post! 
+Site is currently under construction and should be fully updated by 04 June 2021.
 <!--more-->
-I'll make it an actual blog post here in a minute.
