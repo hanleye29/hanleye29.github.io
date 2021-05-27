@@ -2,6 +2,7 @@
 layout: post
 title:  "First Post!"
 date:   2021-05-26 19:05:20 -0500
+comments: true
 categories: Blog Data
 ---
 
