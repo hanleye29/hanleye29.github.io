@@ -1,0 +1,11 @@
+---
+layout: post
+title:  "Automate the Boring Stuff with Python: 2nd Edition"
+date:   2021-05-26 19:05:20 -0500
+comments: true
+categories: resources
+excerpt_separator: <!--more-->
+---
+
+An Introductory Python Text by Al Sweigart
+<!--more-->
