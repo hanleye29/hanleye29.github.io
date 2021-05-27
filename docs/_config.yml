@@ -30,7 +30,7 @@ linkedin_username: eric-hanley-642961149
 disqus:
   # Leave shortname blank to disable comments site-wide.
   # Disable comments for any post by adding `comments: false` to that post's YAML Front Matter.
-  shortname: disqus_QE2sse37hE
+  shortname: https-hanleye29-github-io
 
 # Build settings
 theme: minima
