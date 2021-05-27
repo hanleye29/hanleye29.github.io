@@ -3,6 +3,6 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: home
-title: Data Science Blogf
+title: Data Science Blog
 show_excerpts: True
 ---
