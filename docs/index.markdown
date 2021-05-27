@@ -4,4 +4,5 @@
 
 layout: home
 title: Data Science Blog
+comments: true
 ---
