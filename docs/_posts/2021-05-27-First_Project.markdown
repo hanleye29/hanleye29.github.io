@@ -3,7 +3,7 @@ layout: post
 title:  "First Portfolio Post"
 date:   2021-05-26 19:05:20 -0500
 comments: true
-categories: portfolio
+categories: portfolio machinelearning
 excerpt_separator: <!--more-->
 ---
 
