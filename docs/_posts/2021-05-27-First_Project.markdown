@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  "Housing Prices Competition - Random Forest Regressor"
+title:  "Housing Prices Competition"
 date:   2021-05-26 19:05:20 -0500
 comments: true
 categories: portfolio kaggle
 excerpt_separator: <!--more-->
 ---
 
-Use SciKit-Learn Random Forest Regressor to predict housing prices is Ames, Iowa based on a number of housing features.
+Use SciKit-Learn Random Forest Regressor to predict housing prices is Ames, Iowa based on a number of housing features. How much does XGBRegressor improve this baseline score?
 <!--more-->
 This is where the first portfolio post content would be.
