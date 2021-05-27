@@ -11,4 +11,3 @@ Below you can find a number of Data Science projects broken up by the following 
 + Data Cleaning Projects
 + Data Storytelling & Visualization Projects
 + Machine Learning Projects
-+ Just for Fun!
