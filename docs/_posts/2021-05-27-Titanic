@@ -1,0 +1,12 @@
+---
+layout: post
+title:  "Titanic Survial Competition"
+date:   2021-05-26 19:05:20 -0500
+comments: true
+categories: portfolio kaggle
+excerpt_separator: <!--more-->
+---
+
+Using Random Forest Classifier to determine if a given passenger survived or died during the wreck of the Titanic.
+<!--more-->
+This is where the first portfolio post content would be.
