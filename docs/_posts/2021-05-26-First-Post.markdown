@@ -7,5 +7,5 @@ categories: blog
 excerpt_separator: <!--more-->
 ---
 
-Site is currently under construction and should be fully updated by 04 June 2021.
+Site is currently under construction! Check out the work currently in the Portfolio or check back again in a few days to see progress!
 <!--more-->
