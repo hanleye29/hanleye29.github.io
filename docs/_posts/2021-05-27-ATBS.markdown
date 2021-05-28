@@ -10,6 +10,6 @@ excerpt_separator: <!--more-->
 An Introductory Python Text by Al Sweigart
 <!--more-->
 
-Link to GitHub Repository: https://github.com/hanleye29/Automate_The_Boring_Stuff
+[Link to GitHub Repository](https://github.com/hanleye29/Automate_The_Boring_Stuff){:target="_blank"}
 
 Full presentation forthcoming.
