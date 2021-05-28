@@ -9,6 +9,6 @@ excerpt_separator: <!--more-->
 
 Using Random Forest Classifier to determine if a given passenger survived or died during the wreck of the Titanic.
 <!--more-->
-Link to GitHub Repository: https://github.com/hanleye29/Kaggle_Titanic
+[Link to GitHub Repository](https://github.com/hanleye29/Kaggle_Titanic){:target="_blank"}
 
 Full presentation is forthcoming in this post.
