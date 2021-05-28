@@ -9,4 +9,5 @@ excerpt_separator: <!--more-->
 
 Access IMDB REST API and cross-reference with webscraped viewership data from a variety of sources to create rating & viewership visualization in Tableau.
 <!--more-->
+
 Project in development. Check back later for updates!
