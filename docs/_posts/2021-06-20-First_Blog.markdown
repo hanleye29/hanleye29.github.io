@@ -21,6 +21,18 @@ Alright cool, but what's Cloud Infrastucture? According to AWS:
 
 > Cloud computing is the on-demand delivery of IT resources over the Internet with pay-as-you-go pricing. Instead of buying, owning, and maintaining physical data centers and servers, you can access technology services, such as computing power, storage, and databases, on an as-needed basis from a cloud provider like Amazon Web Services (AWS).
 
-Let'break that down a little - how can you access technology services like the ones described above without buying, owning, and maintaining physical data centers and servers? Well, Amazon already owns a ton of them. And they're everywhere.
+Let's break that down a little - how can you access technology services like the ones described above without buying, owning, and maintaining physical data centers and servers? Well, Amazon already owns a ton of them. And they're everywhere.
 
-<center><img src="https://d1.awsstatic.com/about-aws/Global%20Infrastructure/NA-500x500.f8738d3a3341a06a83fa838b927ba4b85b473918.png" style="height: 300px; width:400px;"/></center>
+## AWS Regions & Availability Zones
+<center><img src="https://d1.awsstatic.com/about-aws/Global%20Infrastructure/NA-500x500.f8738d3a3341a06a83fa838b927ba4b85b473918.png" style="height: 400px; width:400px;"/></center>
+
+The above image only shows you North American **Regions**. Again from AWS:
+
+> AWS has the concept of a Region, which is a physical location around the world where we cluster data centers. We call each group of logical data centers an Availability Zone. Each AWS Region consists of multiple, isolated, and physically separate AZs within a geographic area. Unlike other cloud providers, who often define a region as a single data center, the multiple AZ design of every AWS Region offers advantages for customers. Each AZ has independent power, cooling, and physical security and is connected via redundant, ultra-low-latency networks. AWS customers focused on high availability can design their applications to run in multiple AZs to achieve even greater fault-tolerance. AWS infrastructure Regions meet the highest levels of security, compliance, and data protection.
+
+So these Availability Zones each contain servers upon servers upon servers. AWS offers **Virtual Machines (VM)** that can run on these servers as software, but function like a regular server. Multiple VM's can run on the same physical server, a concept known as multitenancy, and these VM's are isolated and have resources allocated to them by a program called a **Hypervisor**.
+
+## Amazon Elastic Compute Cloud (EC2)
+To clarify this a bit - let's look at one of AWS's main products - the **Elastic Compute Cloud (EC2)**. You can go online (literally right now) and start one of these virtual machines at any availability zone in any region with just a few buttons. As you can see in the image below, when the EC2 instance is made, it is created on a host server that may already have several other EC2 instances associated with it. All of the instances are isolated and hardware resources are allocated by the hypervisor. This EC2 instance can be configured with your choice of processor, storage, networking, operating system, and purchase model, and you can immediately begin running workloads off of it. So literally with the press of a few buttons and a few minutes - you can have a super powerful computing instance up and running anywhere in the world.
+
+<center><img src="https://image.slidesharecdn.com/cmp402-151007210659-lva1-app6891/95/cmp402-amazon-ec2-instances-deep-dive-3-638.jpg?cb=1444253756" style="height: 400px; width:400px;"/></center>
