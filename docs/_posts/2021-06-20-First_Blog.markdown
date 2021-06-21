@@ -7,7 +7,7 @@ categories: blog
 excerpt_separator: <!--more-->
 ---
 
-*What is Cloud Computing? What is AWS? Why is everybody so excited about it? This post covers how I went from practically no knowledge of Cloud Computing to being an AWS Certified Cloud Practitioner in one month!*
+*What is Cloud Computing? What is AWS? Why is everybody so excited about it? This post covers a little bit of what I learned on my journey to becoming a certified AWS Cloud Practitioner.*
 
 <!--more-->
 
