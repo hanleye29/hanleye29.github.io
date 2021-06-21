@@ -10,6 +10,6 @@ excerpt_separator: <!--more-->
 What I learned completing the AWS Cloud Practitioner Certification.
 <!--more-->
 
-![AWS][_includes/1200px-Amazon_Web_Services_Logo.svg.png]
+![image][docs/_includes/1200px-Amazon_Web_Services_Logo.svg.png]
 
 I was talking with an established Data Science Manager at my company about what I could do to increase my Data Science Skillset and my odds of getting a role. His advice was to achieve my
