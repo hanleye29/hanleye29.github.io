@@ -20,3 +20,7 @@ What I found was absolutely astounding! You always hear about Amazon being this 
 Alright cool, but what's Cloud Infrastucture? According to AWS:
 
 > Cloud computing is the on-demand delivery of IT resources over the Internet with pay-as-you-go pricing. Instead of buying, owning, and maintaining physical data centers and servers, you can access technology services, such as computing power, storage, and databases, on an as-needed basis from a cloud provider like Amazon Web Services (AWS).
+
+Let'break that down a little - how can you access technology services like the ones described above without buying, owning, and maintaining physical data centers and servers? Well, Amazon already owns a ton of them. And they're everywhere.
+
+<center><img src="https://d1.awsstatic.com/about-aws/Global%20Infrastructure/NA-500x500.f8738d3a3341a06a83fa838b927ba4b85b473918.png" style="height: 300px; width:400px;"/></center>
