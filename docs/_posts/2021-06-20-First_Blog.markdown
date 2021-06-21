@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "AWS Cloud Practitioner Certification"
-date:   2021-06-20 19:05:20 -0500
+date:   2021-06-20 00:00:00 -0500
 comments: true
 categories: blog
 excerpt_separator: <!--more-->
