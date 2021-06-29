@@ -7,7 +7,7 @@ categories: resources
 excerpt_separator: <!--more-->
 ---
 
-An Introductory Python Text by Al Sweigart
+In this fully revised second edition of the best-selling classic Automate the Boring Stuff with Python, you’ll learn how to use Python to write programs that do in minutes what would take you hours to do by hand—no prior programming experience required. You'll learn the basics of Python and explore Python’s rich library of modules for performing specific tasks, like scraping data off websites, reading PDF and Word documents, and automating clicking and typing tasks.
 <!--more-->
 
 <center><img src="https://images-na.ssl-images-amazon.com/images/I/51CYYb0RZUL._SX376_BO1,204,203,200_.jpg" style="height: 400px; width:300px;"/></center>
