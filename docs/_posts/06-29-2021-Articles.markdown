@@ -1,0 +1,12 @@
+---
+layout: post
+title:  "Articles & Other Resources"
+comments: true
+categories: resources
+excerpt_separator: <!--more-->
+---
+
+All of the best articles I've found around the web to help explain in depth concepts!
+<!--more-->
+
+* [Random Forest - Understanding Gini Impurity](https://towardsdatascience.com/gini-impurity-measure-dbd3878ead33)
