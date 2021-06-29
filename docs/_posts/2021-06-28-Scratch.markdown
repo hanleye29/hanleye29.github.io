@@ -9,6 +9,6 @@ excerpt_separator: <!--more-->
 If you have an aptitude for mathematics and some programming skills, author Joel Grus will help you get comfortable with the math and statistics at the core of data science, and with the hacking skills you need to get started as a data scientist. Packed with new material on deep learning, statistics, and natural language processing, this updated book shows you how to find the gems in today’s messy glut of data.
 <!--more-->
 
-<center><img src="https://builtin.com/sites/default/files/styles/ckeditor_optimize/public/inline-images/data-science-from-scratch-data-science-books_1.png" style="height: 300px; width:400px;"/></center>
+<center><img src="https://builtin.com/sites/default/files/styles/ckeditor_optimize/public/inline-images/data-science-from-scratch-data-science-books_1.png" style="height: 400px; width:300px;"/></center>
 
 Full presentation forthcoming.
