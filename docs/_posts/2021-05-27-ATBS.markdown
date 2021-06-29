@@ -10,6 +10,8 @@ excerpt_separator: <!--more-->
 An Introductory Python Text by Al Sweigart
 <!--more-->
 
+<center><img src="https://images-na.ssl-images-amazon.com/images/I/51CYYb0RZUL._SX376_BO1,204,203,200_.jpg" style="height: 400px; width:300px;"/></center>
+
 [Link to GitHub Repository](https://github.com/hanleye29/Automate_The_Boring_Stuff){:target="_blank"}
 
 Full presentation forthcoming.
