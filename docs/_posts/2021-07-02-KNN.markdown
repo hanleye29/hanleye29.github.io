@@ -1,0 +1,15 @@
+---
+layout: post
+title:  "KNN Regressor - Body Fat % Predictor"
+date:   2021-05-26 19:05:20 -0500
+comments: true
+categories: portfolio machinelearning
+excerpt_separator: <!--more-->
+---
+
+Visually explore how to develop a K-Nearest-Neighbors Regression model using SciKit-Learn to predict Body Fat % given a number of physical measurements.
+<!--more-->
+
+[Link to GitHub Repository](https://github.com/hanleye29/KNN_BodyFat/blob/main/K-Nearest-Neighbor-Regression%20BodyFat%25%20Predictor.ipynb){:target="_blank"}
+
+Full presentation is forthcoming in this post.
