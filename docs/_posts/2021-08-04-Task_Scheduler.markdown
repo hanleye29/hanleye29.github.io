@@ -114,13 +114,13 @@ for i in range(len(df)):
 Got that? Great. Save all that to a folder and toss another "reports" folder in there to which you can save your .csv files - make sure to provide that path to the last line in pull_ten_tweets.py. Now you should have a folder that looks like the following (excepting pycache and the batch file):
 
 
-<center><img src="https://github.com/hanleye29/hanleye29.github.io/blob/main/docs/_includes/scheduler_folder.PNG?raw=true" style="height: 300px; width:500px;"/></center>
+<center><img src="https://github.com/hanleye29/hanleye29.github.io/blob/main/docs/_includes/scheduler_folder.PNG?raw=true" style="height: 200px; width:500px;"/></center>
 
 
 Now for the extremely simple part of making the batch file. Open your notepad and plop in the path to your python.exe, press the spacebar, and then plop in the path to your pull_ten_tweets.py, press enter and then type in "pause". Should look like this:
 
 
-<center><img src="https://github.com/hanleye29/hanleye29.github.io/blob/main/docs/_includes/batch_pic.PNG?raw=true" style="height: 300px; width:500px;"/></center>
+<center><img src="https://github.com/hanleye29/hanleye29.github.io/blob/main/docs/_includes/batch_pic.PNG?raw=true" style="height: 200px; width:500px;"/></center>
 
 
 Save that bad boy as real_batch.bat in the same folder as your .py files, and you're ready to ball. You can actually double click this batch file and now it should execute. I would advise you do this to make sure everything is running properly - otherwise you'll crash during task execution.
