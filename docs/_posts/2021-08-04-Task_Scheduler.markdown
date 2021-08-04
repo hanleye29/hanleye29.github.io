@@ -27,12 +27,12 @@ A batch file or batch job is a collection, or list, of commands that are process
 
 1. A command to start python.exe.
 2. Once we're running python, we'll want to execute our pull_ten_tweets.py
-3. Pause the execution of the program so we can so our command prompt after running our first two commands.
+3. Pause the execution of the program after pull_ten_tweets.py executes so we can confirm our batch file is running correctly.
 
-That's really all there is to this.
+Believe it or not, it is even easier than it sounds.
 
 # 1. Get Path to python.exe
-We run python simply by providing the pathway to the the python.exe file on our system (mine was "C:\Users\erich\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\python.exe"). Just as a note, make sure you have tweepy and pandas installed if you want to run the tutorial exactly. To do this, open the command prompt and enter the following two commands:
+We run python simply by providing the pathway to the the python.exe file on our system (mine was "C:\Users\erich\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\python.exe"). Just as a note, make sure you have tweepy and pandas installed if you want to run this tutorial exactly. To do this, open the command prompt and enter the following two commands:
 
 ```
 python -m pip install pandas
@@ -43,19 +43,21 @@ Terrific.
 
 # 2. Set Up config.py & pull_ten_tweets.py
 
-We'll need the associated configuration file that contains your API Key, API Secret Key, API Token, and API Token Secret. Not going to go over how to do that here, but there are plenty of great tutorials on that in other places. My keys are saved in a file called config.py as shown here (but not the actual codes, because then you could post all kinds of silly tweets to my account):
+We'll need the associated configuration file that contains your API Key, API Secret Key, API Token, and API Token Secret. Not going to go over how to do that here, but there are plenty of great tutorials on that in [other places](https://support.appmachine.com/hc/en-us/articles/203645726-Twitter-API-keys). My keys are saved in a file called config.py as shown here (but not the actual codes, because then you could post all kinds of silly tweets to my account):
 
 ```python
 #config.py
 
 API_Key = 'XXXXXXXXX'
 API_Secret_Key = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
-Access_Token = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx
+Access_Token = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 Access_Token_Secret = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 
 ```
 
-Addtionally, we won't go into detail on the mechanics of the following code pull_ten_tweets.py. To summarize super briefly, this code will basically save the **desired_fields** and **user_fields** for the last **max_tweets** about **query** as individual .csv files in the location **reports_path**. So each time this code runs, all ten tweets will be saved as individual .csv files at a specified location. Additionally, our naming convention for the .csv files prevents duplicates from being saved - if the same tweet is read in two runs, it will simply overwrite the first saved instance.  I chose bitcoin for my query because I'm intolerable.
+Addtionally, we won't go into detail on the mechanics of the following code pull_ten_tweets.py. Again, there is lots of good info on [how to pull from API's in general](https://www.nylas.com/blog/use-python-requests-module-rest-apis/) and [using tweepy specifically](https://docs.tweepy.org/en/latest/) in other places.
+
+To summarize super briefly though, this code will basically save the **desired_fields** and **user_fields** for the last **max_tweets** about **query** as individual .csv files in the location **reports_path**. So each time this code runs, all ten tweets will be saved as individual .csv files at a location specified in our code. Our naming convention for the .csv files prevents duplicates from being saved - if the same tweet is read in two runs, it will simply overwrite the first saved instance.  I chose bitcoin for my query because I'm intolerable.
 
 ```python
 #pull_ten_tweets.py
@@ -111,7 +113,7 @@ for i in range(len(df)):
     df.iloc[i].to_csv(reports_path + '\\' + query + "_" + name + "_"+ time +'.csv')
 
 ```
-Got that? Great. Save all that to a folder and toss another "reports" folder in there to which you can save your .csv files - make sure to provide that path to the last line in pull_ten_tweets.py. Now you should have a folder that looks like the following (excepting pycache and the batch file):
+Got that? Great. Save config.py and pull_ten_tweets.py to a folder and toss another "reports" folder in there to which you can save your .csv files - make sure to provide that path to the last line in pull_ten_tweets.py. Now you should have a folder that looks like the following (excepting pycache and the batch file):
 
 
 <center><img src="https://github.com/hanleye29/hanleye29.github.io/blob/main/docs/_includes/scheduler_folder.PNG?raw=true"/></center>
@@ -124,7 +126,7 @@ Now for the extremely simple part of making the batch file. Open your notepad an
 <center><img src="https://github.com/hanleye29/hanleye29.github.io/blob/main/docs/_includes/batch_pic.PNG?raw=true"/></center>
 
 
-Save that bad boy as real_batch.bat in the same folder as your .py files, and you're ready to ball. You can actually double click this batch file and now it should execute. I would advise you do this to make sure everything is running properly - otherwise you'll crash during task execution.
+Save that bad boy as real_batch.bat in the same folder as your .py files, we're ready to schedule our task! You can actually double click this batch file and now it should execute. I would advise you do this to make sure everything is running properly - otherwise you'll crash during task execution.
 
 ## Schedule the Task
 Great news - this is the easy part. Open Task Scheduler, right click the Task Scheduler Library, and create a New Folder called "MyTasks". Right click MyTasks then select "Create Basic Task". In the wizard, provide a name of your choosing and a description. For Trigger, select "One Time" and schedule the event for, say, 15 minutes from now. For Action, select "Start a Program", then browse to your batch file "real_batch.bat". On the Finish screen, check the box that says "Open the Properties dialogue for this task when I click Finish" and then select Finish.
@@ -135,7 +137,7 @@ Holy cow you're so close. Now the Properties dialogue has appeared. Select Trigg
 <center><img src="https://github.com/hanleye29/hanleye29.github.io/blob/main/docs/_includes/edit_trigger.PNG?raw=true"/></center>
 
 
-Last thing! Open conditions and uncheck the box "Start the task only if the computer is on AC power" - otherwise, you won't be able to run this task unless you're plugged into a power source. This one tripped me up for a moment when I was banished from the living room and AC adapetr while my wife was on a call.
+Last thing! Open conditions and uncheck the box "Start the task only if the computer is on AC power" - otherwise, you won't be able to run this task unless you're plugged into a power source. This one tripped me up for a moment when I was banished from the living room and power cord while my wife was on a work call.
 
 
 <center><img src="https://github.com/hanleye29/hanleye29.github.io/blob/main/docs/_includes/edit_conditions.PNG?raw=true"/></center>
