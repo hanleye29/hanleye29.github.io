@@ -165,4 +165,4 @@ For such applications, it would make more sense to have this type of data retrie
 
 That, however, is a tutorial for another time. Today, we'll have to live with our Prehistoric Data Lake.
 
-<center><img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.alamy.com%2Fstock-photo%2Ft-rex-costume.html&psig=AOvVaw1ndVkkg4IyKcJnjJEx9VBq&ust=1628192616891000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCJjJ1aqQmPICFQAAAAAdAAAAABAD"/></center>
+<center><img src="https://www.deccanherald.com/sites/dh/files/gallery_images/2020/08/01/file7bopeht86ah12bqrrfgj.jpg"/></center>
