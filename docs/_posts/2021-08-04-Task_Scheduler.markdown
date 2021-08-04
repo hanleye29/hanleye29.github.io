@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  "Automate API Data Retrieval on Windows Task Scheduler"
+title:  "Pre-Historic Datalake: Automate API Data Retrieval with Windows Task Scheduler"
 date:   2021-08-04 00:00:00 -0500
 comments: true
 categories: blog
 excerpt_separator: <!--more-->
 ---
 
-*AWS Lambda Functions? GCP Cloud Functions? Who needs them?! Let's take a look at how you can automate a request to an API using your laptop. We'll be using the Twitter API, but you can use any API you'd like for this.*
+*Let's take a look at how we can make a pre-historic Datalake using Windows Task Scheduler to automate Twitter API requests. No cloud required!*
 
 <!--more-->
 
@@ -159,9 +159,9 @@ Really terrific work out there. Now you can start doing some hardcore twitter an
 
 But not really. 
 
-For most applications, we would be requesting significantly more data than 10 tweets every 5 minutes. You probably won't be able to predict Bitcoin's price tomorrow based off 2880 tweets today, 1700 of which are from a bot named musky_coin_boy_6900. Once you start collecting the **BIG DATA** required to extract useful insights from this type of data, you'll need more than your laptop and a single directory full of .csv files. This is where the scalable processing and storage capabilities of cloud infrastructure come into play.
+For most applications, we would be requesting significantly more data than 10 tweets every 5 minutes. You probably won't be able to predict Bitcoin's price tomorrow based off 2880 tweets today, 1700 of which are from a bot named musky_coin_boy_6900. Once you start collecting the **BIG DATA** required to extract useful insights from this type of data, you'll need more than your laptop and a single directory full of .csv files. This is where the scalable processing and storage capabilities of cloud infrastructure come into play, but the process is still analagous to what we have done in this article.
 
-For such applications, it would make more sense to have this type of data retrieval/storage process set up on a cloud computing service so you can feed these tweets into a datalake or data warehouse for storage and analysis. In such a case, a cloud scheduling service like *GCP Cloud Scheduler* or *AWS Eventbridge* would fulfill the role of Windows Task Scheduler: these microservices would trigger a *Cloud Function* or *Lambda Function* respectively to pull from the API and store the data in *S3*/*GCS* (Storage Services for Datalake) or *Redshift*/*BigQuery* (Data Warehouse) or both.
+For such applications, it would make more sense to have this type of data retrieval/storage process set up on a cloud computing service so you can feed these tweets into a datalake or data warehouse for storage and analysis. In such a case, a cloud scheduling service like *GCP Cloud Scheduler* or *AWS Eventbridge* would fulfill the role of Windows Task Scheduler: these microservices can trigger a serverless compute service like *GCS Cloud Function* or *AWS Lambda Function* to pull from the API and store the data in *AWS S3*/*GCP GCS* (Storage Services for Datalake) or *AWS Redshift*/*GCP BigQuery* (Data Warehouse) or both.
 
 That, however, is a tutorial for another time. Today, we'll have to live with our Prehistoric Data Lake.
 
