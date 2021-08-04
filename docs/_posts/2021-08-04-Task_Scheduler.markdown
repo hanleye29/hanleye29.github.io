@@ -116,6 +116,7 @@ Got that? Great. Save all that to a folder and toss another "reports" folder in 
 
 <center><img src="https://github.com/hanleye29/hanleye29.github.io/blob/main/docs/_includes/scheduler_folder.PNG?raw=true" style="height: 200px; width:500px;"/></center>
 
+# 3. Write the Actual Batch File
 
 Now for the extremely simple part of making the batch file. Open your notepad and plop in the path to your python.exe, press the spacebar, and then plop in the path to your pull_ten_tweets.py, press enter and then type in "pause". Should look like this:
 
@@ -149,11 +150,19 @@ This pop up is happening because of that "pause" statement we have at the end of
 
 Additionally, if you navigate to where you're storing your .csv's you should see something like this:
 
-<center><img src="https://github.com/hanleye29/hanleye29.github.io/blob/main/docs/_includes/csv_success.PNG?raw=true" style="height: 300px; width:550px;"/></center>
+<center><img src="https://github.com/hanleye29/hanleye29.github.io/blob/main/docs/_includes/csv_success.PNG?raw=true"/></center>
 
 Finally, five minutes after the first instance runs, you should get another pop up to let you know that your task is running - you should also have ten more .csv files saved in there.
 
-## Great News
-Really terrific work out there. Now you can bump up those requests and start doing some real, hardcore twitter analytics. Of course, it would likely make more sense to have this type of thing set up on a cloud computing service so you can feed these into an analytics service. You would use a cloud scheduling service like GCP Cloud Scheduler or AWS Eventbridge to run a Cloud Function or a Lambda Function respectively, but this is basically the same process as we've seen here - just done in the cloud. Doing these things in the cloud makes the overall flow of data a lot easier to manage - you can pipe these tweets directly to Pub/Sub services or Data Warehouses for analysis. From a scalability standpoint, you probably won't be able to predict bitcoin's price tomorrow based off ten tweets, seven of which are from a bot named musky_coin_boy_6900. Once you start collecting BIG DATA - you'll need more than you laptop.
+## Prehistoric Datalake
+Really terrific work out there. Now you can start doing some hardcore twitter analytics. 
 
-Still a fun exercise regardless. Follow me on LinkedIn I guess. Not Twitter though - that's for personal use only and it's primarily Sopranos themed anyways.
+But not really. 
+
+For most applications, we would be requesting significantly more data than 10 tweets every 5 minutes. You probably won't be able to predict Bitcoin's price tomorrow based off 2880 tweets today, 1700 of which are from a bot named musky_coin_boy_6900. Once you start collecting the **BIG DATA** required to extract useful insights from this type of data, you'll need more than your laptop and a single directory full of .csv files. This is where the scalable processing and storage capabilities of cloud infrastructure come into play.
+
+For such applications, it would make more sense to have this type of data retrieval/storage process set up on a cloud computing service so you can feed these tweets into a datalake or data warehouse for storage and analysis. In such a case, a cloud scheduling service like *GCP Cloud Scheduler* or *AWS Eventbridge* would fulfill the role of Windows Task Scheduler: these microservices would trigger a *Cloud Function* or *Lambda Function* respectively to pull from the API and store the data in *S3*/*GCS* (Storage Services for Datalake) or *Redshift*/*BigQuery* (Data Warehouse) or both.
+
+That, however, is a tutorial for another time. Today, we'll have to live with our Prehistoric Data Lake.
+
+<center><img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.alamy.com%2Fstock-photo%2Ft-rex-costume.html&psig=AOvVaw1ndVkkg4IyKcJnjJEx9VBq&ust=1628192616891000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCJjJ1aqQmPICFQAAAAAdAAAAABAD"/></center>
