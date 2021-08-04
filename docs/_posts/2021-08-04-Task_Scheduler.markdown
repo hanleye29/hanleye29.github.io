@@ -15,10 +15,109 @@ excerpt_separator: <!--more-->
 
 # Overview
 
-First thing's first. What is Windows Task Scheduler? Windows Task Scheduler is a tool that allows you to create and run virtually any task automatically. Rather than sitting there pressing execute over and over and over, Windows Task Scheduler is able to run these tasks for you at prespecified times. Actually, if you open Windows Task Scheduler right now, you'll see applications that have already set up a number of automated tasks. Each task is comprised of General Information, Triggers, Actions, Conditions, and Settings.
+What is Windows Task Scheduler? Windows Task Scheduler is a tool that allows you to create and run virtually any task automatically. Rather than sitting there pressing execute over and over and over in Jupyter Notebook or your IDE, Windows Task Scheduler is able to run these tasks for you at prespecified times. Actually, if you open Windows Task Scheduler right now, you'll see applications that have already set up a number of automated tasks. 
 
-## General Information
 
-<center><img src="https://github.com/hanleye29/hanleye29.github.io/blob/main/docs/_includes/General.PNG?raw=true" style="height: 300px; width:400px;"/></center>
+<center><img src="https://github.com/hanleye29/hanleye29.github.io/blob/main/docs/_includes/scheduler_overview.PNG?raw=true" style="height: 400px; width:600px;"/></center>
 
-What we'll need is the actual python script (in this case, mine is called pull_ten_tweets.py) we'll want to execute that will be requesting data from the API, formatting the data, and storing it in a given location. As stated above, we'll need the associated configuration file that contains your API Key, API Secret Key, API Token, and API Token Secret - mine is saved in a file called config.py. We'll also need the pathway to your python.exe file (mine was "C:\Users\erich\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\python.exe").
+
+Generally, a task consists of a trigger (which can be time or event based) and the action to be carried out. The action is typically the execution of a .exe (executable) file or a .bat (batch) file. In our case, our trigger will be time based - it will occur every 5 minutes - and the action will be the execution of a batch file. Let's take a look at how we'll put together this batch file.
+
+# Batch File
+
+A batch file or batch job is a collection, or list, of commands that are processed in sequence often without requiring user input or intervention. With a computer running a Microsoft operating system such as Windows, a batch file is stored as a file with a .bat file extension. A batch job can accomplish multiple tasks without interaction from the user, freeing up the user's time for other tasks. Our batch file will consist of three commands:
+
+1. A command to start python.exe.
+2. Once we're running python, we'll want to execute our pull_ten_tweets.py
+3. Pause the execution of the program so we can so our command prompt after running our first two commands.
+
+That's really all there is to this.
+
+## python.exe
+We run python simply by providing the pathway to the the python.exe file on our system (mine was "C:\Users\erich\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\python.exe"). Just as a note, make sure you have tweepy and pandas installed if you want to run the tutorial exactly. To do this, open the command prompt and enter the following two commands:
+
+```
+python -m pip install pandas
+python -m pip install tweepy
+```
+
+Terrific.
+
+## pull_ten_tweets.py
+
+What we'll need is the actual python script (in this case, mine is called pull_ten_tweets.py) we'll want to execute that will be requesting data from the API, formatting the data, and storing it in a given location. As stated above, we'll need the associated configuration file that contains your API Key, API Secret Key, API Token, and API Token Secret - mine is saved in a file called config.py as shown here (but not the actual codes, because then you could post all kinds of silly tweets to my account):
+
+```python
+#config.py
+
+API_Key = 'XXXXXXXXX'
+API_Secret_Key = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+Access_Token = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx
+Access_Token_Secret = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+
+```
+
+We won't go into detail on the mechanics of the following code. There are a lot of great tutorials out there on how to request data from the Twitter API, but this one will basically return the **desired_fields** and **user_fields** for the last **max_tweets** about **query**. I chose bitcoin for my query because I'm intolerable.
+
+```python
+#pull_ten_tweets.py
+import config
+import pandas as pd
+import tweepy as tw
+
+auth = tw.OAuthHandler(config.API_Key, config.API_Secret_Key)
+auth.set_access_token(config.Access_Token, config.Access_Token_Secret)
+api = tw.API(auth, wait_on_rate_limit=True)
+
+query = 'bitcoin'
+max_tweets = 10
+search =[status for status in tw.Cursor(api.search, q = query).items(max_tweets)]
+
+tweet_data = []
+desired_fields = ['created_at', 'text','lang']
+user_fields = ['name','screen_name','location','description', 'followers_count','friends_count']
+temp_dict = {}
+
+for i in range(len(search)):
+    temp_dict = {}
+    for key, value in search[i]._json.items():
+        if key in desired_fields:
+            temp_dict[key] = value
+        elif key == 'user':
+            for key2, value2 in search[i]._json['user'].items():
+                if key2 in user_fields:
+                    temp_dict[key2] = value2
+    tweet_data.append(temp_dict)
+
+labels = list(tweet_data[0].keys())
+df = pd.DataFrame(columns = labels)
+
+tweet_data
+
+for i in range(len(tweet_data)):
+    df = df.append({
+              labels[0]:tweet_data[i]['created_at'],
+              labels[1]:tweet_data[i]['text'],
+              labels[2]:tweet_data[i]['name'],
+              labels[3]:tweet_data[i]['screen_name'],
+              labels[4]:tweet_data[i]['location'],
+              labels[5]:tweet_data[i]['description'],
+              labels[6]:tweet_data[i]['followers_count'],
+              labels[7]:tweet_data[i]['friends_count'],
+              labels[8]:tweet_data[i]['lang']}, ignore_index=True)
+
+for i in range(len(df)):
+    name = df['screen_name'][i]
+    time = df['created_at'][i].replace(" ", "").replace(":","_").replace('+',"_")
+    df.iloc[i].to_csv(path_to_where_you_want_to_store_reports + '\\' + query + "_" + name + "_"+ time +'.csv')
+
+```
+Got that? Great. Save all that to a folder and toss another "reports" folder in there to which you can save your .csv files - make sure to provide that path to the last line in pull_ten_tweets.py. Now you should have a folder that looks like the following (excepting pycache and the batch file):
+
+<center><img src="https://github.com/hanleye29/hanleye29.github.io/blob/main/docs/_includes/scheduler_folder.PNG?raw=true" style="height: 400px; width:600px;"/></center>
+
+Now for the extremely simple part of making the batch file. Open your notepad and plop in the path to your python.exe, press the spacebar, and then plop in the path to your pull_ten_tweets.py, press enter and then type in "pause". Should look like this:
+
+<center><img src="https://github.com/hanleye29/hanleye29.github.io/blob/main/docs/_includes/batch_pic.PNG?raw=true" style="height: 400px; width:600px;"/></center>
+
+Save that bad boy as real_batch.bat in the same folder as your .py files, and you're ready to ball.
