@@ -24,7 +24,21 @@ But enough praise and semantics:
 
 Straight from Wikipedia: "In statistics, linear regression is a linear approach for modelling the relationship between a scalar response and one or more explanatory variables." 
 
-The linked dataset contains *sales* (in thousands) for a particular product and the product's associated advertising budgets (in thousands) for *TV*, *radio*, and *newspaper* medias. In this case, we can attempt to model the relationship between *sales* (scalar response) and one or many of the associated advertising budgets (explanatory variables) as a linear function. The former case (one explanatory variable) is referred to as simple linear regression and is generally of the form:
+The [linked dataset](https://raw.githubusercontent.com/hardikkamboj/An-Introduction-to-Statistical-Learning/master/data/Advertising.csv) contains *sales* (in thousands) for a particular product and the product's associated advertising budgets (in thousands) for *TV*, *radio*, and *newspaper* medias. Companies pour vast amounts of money into advertising, and need to confirm that their money is being well spent. What is the relationship between a product's advertising budgets and sales? In this case, we can attempt to model the relationship between *sales* (scalar response) and one or many of the associated advertising budgets (explanatory variables) as a linear function. The former case (one explanatory variable) is referred to as simple linear regression and is generally of the form:
 
-$$Y = \beta_0 + \beta_1x_1$$
+$$Y \approx \beta_0 + \beta_1x_1$$
 
+or in the example described:
+
+$$sales \approx \beta_0 + \beta_{TV}x_{TV}$$
+
+To model this relationship, we need to estimate the parameters $\beta_0$ and $beta_{TV}$ using the data we already have. Our goal is to obtain parameter estimates $\hat{\beta_0}$ and $\hat{\beta_{TV}}$ such that the linear model fits the data well, that is for each data point $i = 1,...,n$:
+
+$$y_i = \hat{\beta_0} + \hat{\beta_{TV}}\x_{TV}_i$$
+
+## **Ordinary Least Squares**
+
+The most common way to determine the parameter estimates $\hat{\beta_0}$ and $\hat{\beta_{TV}}$ is by minimizing the residual sum of squares (RSS) and is known as ordinary least squares. Let $\hat{y_i} = \hat{\beta_0} + \hat{\beta_{TV}}$ be the prediction for Y based on the ith value of X. Then $e_i = y_i - \hat{y_i}$ and $RSS = e_1^2 + e_2^2 + ... + e_n^2$. In the case of simple linear regression, these minimized parameter estimates can be directly calculated as follows:
+
+$$ \hat{\beta_{TV}} = \frac{\sum_{i=1}^n{x_i - x)(y_i - y)}{\sum_{i=1}^n{(x_i-x)^2}},$$
+$$ \hat{\beta_0} = y - \hat{\beta_{TV}}x_{TV}$$
