@@ -40,6 +40,6 @@ $$y_i = \hat{\beta_0} + \hat{\beta_{TV}}x_{TV_i}$$
 
 The most common way to determine the parameter estimates $\hat{\beta_0}$ and $\hat{\beta_{TV}}$ is by minimizing the residual sum of squares (RSS) and is known as ordinary least squares. Let $\hat{y_i} = \hat{\beta_0} + \hat{\beta_{TV}}$ be the prediction for Y based on the ith value of X. Then $e_i = y_i - \hat{y_i}$ and $RSS = e_1^2 + e_2^2 + ... + e_n^2$. In the case of simple linear regression, these minimized parameter estimates can be directly calculated as follows:
 
-$$ \hat{\beta_{TV}} = \frac{\sum_{i=1}^n(x_i - x)(y_i - y){\sum_{i=1}^n(x_i-x)^2},$$
+$$ \hat{\beta_{TV}} = \frac{\sum_{i=1}^n(x_i - x)(y_i - y)}{\sum_{i=1}^n(x_i-x)^2},$$
 
 $$ \hat{\beta_0} = y - \hat{\beta_{TV}}x_{TV}$$
