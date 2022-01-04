@@ -26,5 +26,5 @@ Straight from Wikipedia: "In statistics, linear regression is a linear approach 
 
 The linked dataset contains *sales* (in thousands) for a particular product and the product's associated advertising budgets (in thousands) for *TV*, *radio*, and *newspaper* medias. In this case, we can attempt to model the relationship between *sales* (scalar response) and one or many of the associated advertising budgets (explanatory variables) as a linear function. The former case (one explanatory variable) is referred to as simple linear regression and is generally of the form:
 
-$$ Y = \beta_0 + \beta_1x_1 $$
+$$Y = \beta_0 + \beta_1x_1$$
 
