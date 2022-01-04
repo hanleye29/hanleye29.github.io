@@ -34,7 +34,7 @@ $$sales \approx \beta_0 + \beta_{TV}x_{TV}$$
 
 To model this relationship, we need to estimate the parameters $\beta_0$ and $beta_{TV}$ using the data we already have. Our goal is to obtain parameter estimates $\hat{\beta_0}$ and $\hat{\beta_{TV}}$ such that the linear model fits the data well, that is for each data point $i = 1,...,n$:
 
-$$y_i = \hat{\beta_0} + \hat{\beta_{TV}}x_{TV}_i$$
+$$y_i = \hat{\beta_0} + \hat{\beta_{TV}}x_{TV_i}$$
 
 ## **Ordinary Least Squares**
 
