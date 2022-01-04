@@ -4,6 +4,7 @@ title:  "Ordinary Least Squares Linear Regression in R and Python (statsmodels)"
 date:   2022-01-03 00:00:00 -0500
 comments: true
 categories: blog
+usemathjax: true
 excerpt_separator: <!--more-->
 ---
 
