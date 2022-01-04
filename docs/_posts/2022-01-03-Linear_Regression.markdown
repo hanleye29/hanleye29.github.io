@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Ordinary Least Squares Linear Regression in R and Python (statsmodels)"
+title:  "Ordinary Least Squares Linear Regression in R and Python"
 date:   2022-01-03 00:00:00 -0500
 comments: true
 categories: blog
