@@ -43,3 +43,5 @@ The most common way to determine the parameter estimates $\hat{\beta_0}$ and $\h
 $$ \hat{\beta_{TV}} = \frac{\sum_{i=1}^n(x_i - x)(y_i - y)}{\sum_{i=1}^n(x_i-x)^2},$$
 
 $$ \hat{\beta_0} = y - \hat{\beta_{TV}}x_{TV}$$
+
+These equations are derived from differentiating the optimiza
