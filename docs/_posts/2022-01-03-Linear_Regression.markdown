@@ -44,8 +44,15 @@ $$ \hat{\beta_{TV}} = \frac{\sum_{i=1}^n(x_i - x)(y_i - y)}{\sum_{i=1}^n(x_i-x)^
 
 $$ \hat{\beta_0} = y - \hat{\beta_{TV}}x_{TV}$$
 
-These equations are derived from differentiating the optimization shown here:
+These equations are derived by differentiating the the following equation in respect to $\beta_0$ and $\beta_{TV}$, setting the resultant equations to 0, and solving  for the parameters respectively:
 
-$$\widehat{\beta}_{ridge} = argmin_\beta[\sum_{i = 1}^n ((y_i - beta_0 - x_i\beta_{TV})^2)]$$
+$$[\sum_{i = 1}^n ((y_i - \beta_0 - x_i\beta_{TV})^2)]$$
 
 I'll leave that as an exercise for the reader though.
+
+## **Simple Linear Regression Example in Python**
+
+Let's use two common python packages to create a simple linear regression model for the relationship between sales and tv spending: 
+
+  * **pandas** is a common data science tool that allows us to upload data into dataframes for complex operations. 
+  * **statsmodels** is another common data science tool that allows us to create descriptive models in the style of R outputs. Typically, if making production models, one might use the package **sklearn**, but because we want more readable outputs for interpretation purposes, we'll use **statsmodels**.
