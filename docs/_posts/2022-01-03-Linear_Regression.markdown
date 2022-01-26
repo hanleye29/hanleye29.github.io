@@ -16,7 +16,7 @@ excerpt_separator: <!--more-->
 
 *Ah, linear regression using ordinary least squares (OLS).*
 
-It feels comfortable and familiar - like your favorite pair of sweatpants or the recording of the song you've heard so many times you can anticipate every nuance in the instrumentation. It feels strange calling it machine learning and it seems almost more appropriate to call it statistical learning due to its simplicity and elegance. The line between machine learning and statistical learning/applied statistics is blurry to say the least. Call it what you want, linear regression is absolutely foundational for understanding more powerful machine learning models (logistic regression, regularization/shrinkage, nonparametric methods), and can also be very powerful in its own right for its interpretive properties and predictive capabilities. Understanding the ordinary least squares approach that is used to fit the model is also important as it illustrates how models are fit using a closed-form-formula vs. numerically (i.e. using gradient descent).
+It feels **comfortable** and **familiar** - like your favorite pair of sweatpants or a recording of a song you've heard so many times you can anticipate every nuance in the instrumentation. It feels strange calling it machine learning and it seems almost more appropriate to call it statistical learning due to its simplicity and elegance. The line between machine learning and statistical learning/applied statistics is blurry to say the least. Call it what you want, linear regression is absolutely foundational for understanding more powerful machine learning models (logistic regression, regularization/shrinkage, nonparametric methods), and can also be very powerful in its own right for its interpretive properties and predictive capabilities. Understanding the ordinary least squares approach that is used to fit the model is also important as it illustrates how models are fit using a closed-form-formula vs. numerically (i.e. using gradient descent).
 
 But enough praise and semantics:
 
@@ -44,4 +44,8 @@ $$ \hat{\beta_{TV}} = \frac{\sum_{i=1}^n(x_i - x)(y_i - y)}{\sum_{i=1}^n(x_i-x)^
 
 $$ \hat{\beta_0} = y - \hat{\beta_{TV}}x_{TV}$$
 
-These equations are derived from differentiating the optimiza
+These equations are derived from differentiating the optimization shown here:
+
+$$\widehat{\beta}_{ridge} = argmin_\beta[\sum_{i = 1}^n ((y_i - beta_0 - x_i\beta_{TV})^2)]$$
+
+I'll leave that as an exercise for the reader though.
